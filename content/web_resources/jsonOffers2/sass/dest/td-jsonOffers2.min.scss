@@ -1,0 +1,782 @@
+/* BACKGROUND-COLORS */
+$colorBG: #000;
+$figureBG: #fff;
+$figcaptionBG: #fff;
+$nth1BG: #fff;
+$nth2BG: #fff;
+$boxtitleBG: red;
+
+/*COLORS */
+$boxtitleCL: #fff;
+$boxPriceTopCL: red;
+$boxPriceMiddleCL: #000;
+$boxPriceDownCL: red;
+
+/*BORDER */
+$boxtitleBD: darkred;
+
+@charset "UTF-8";
+
+/*
+** CLASS PARA RESET
+*******/
+$resetClass		: 'resetCpn';
+
+/*
+** SIZE FUNCTION
+*******/
+@function size($size) {
+	
+	@return #{($size / 16)}rem;
+}
+
+/*
+** FONT FAMILY
+*******/
+$openSans	: 'Open Sans', sans-serif;
+
+/*
+** HTML RESET
+*******/
+html {
+	font-size: 1rem !important;
+}
+
+/*
+** BODY RESET
+*******/
+body {
+	
+	& {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		font-family: $openSans;
+	}
+	
+	.#{$resetClass} {
+		font-size: 0;
+	}
+}
+
+/*
+** AJAX LOADER
+*******/
+#ajaxBusy {
+	display: none !important;
+}
+
+/*
+** ELEMENTS RESET
+*******/ 
+.#{$resetClass} {
+
+	a, p, span, ul, li, h1, h2, h3, h4, h5, h6, label, table {
+		width: auto;
+		height: auto;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		text-decoration: none;
+		line-height: inherit;
+		font-size: 1rem;
+	}
+
+	img, fieldset, figure {
+		width: auto;
+		height: auto;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		display: block;
+		word-spacing: 0;
+	}
+}
+
+/*
+** GENERAL
+*******/
+body {
+
+	.#{$resetClass} {
+
+		.content {
+			width: 1180px;
+			max-width: 100%;
+			margin: 0 auto;
+	        display: block;
+		}
+	}
+}
+
+@media screen and (max-width: 1000px) {
+
+	.#{$resetClass} {
+		.content {
+			width: 95% !important;
+		}
+	}
+
+}
+
+.zx_mediaslot {
+    display: none;
+}
+
+.maskBody {
+	
+	& {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 20;
+		display: none;
+		cursor: pointer;
+	}
+
+	&.actived {
+		display: block !important;
+	}
+}
+
+body .#{$resetClass} * {
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#offersHome {
+
+        &{
+            width: 100%;
+            float: left;
+            background-color: $colorBG;
+            text-align: center;
+        }
+
+        .content{
+
+            &{
+                width: 100%;
+                max-width: 1180px;
+                min-width: 280px;
+                display: inline-block;
+                margin: 0 auto;
+            }
+
+            ul.list-products{
+
+                &{
+                    width: 100%;
+                    float: left;
+                    text-align: center;
+                }
+
+                &.of8{
+                    li{
+                        width: calc((100% - 5rem) / 4);
+                    }
+                }
+
+                &.of6 {
+                    li{
+                        width: calc((100% - 5rem) / 3);
+                    }
+                }
+
+                li{
+
+                    &{
+                        display: inline-block;
+                        margin: 1rem 0.5rem;
+                    }
+
+                    figure{
+
+                        &{
+                            width: 100%;
+                            display: inline-block;
+                            background-color: $figureBG;
+                            font-size: 0;
+                        }
+
+                        &:hover {
+
+                            .img {
+                                img {
+                                    transform: scale(1.3);
+                                }
+                            }
+
+                        }
+
+                        figcaption {
+
+                            &{
+                                width: 100%;
+                                display: inline-block;
+                                background-color: $figcaptionBG;
+                                border-radius: 6px 6px 0px 0px;
+                                overflow: hidden;
+                            }
+
+                                .box02{
+
+                                &{
+                                    width: 50%;
+                                    display: inline-block;
+                                    box-sizing: border-box;
+                                    padding: 0.5rem;
+                                    vertical-align: middle;
+                                }
+
+                                &:nth-child(1){
+                                    background-color: $nth1BG;
+                                }
+
+                                &:nth-child(2){
+                                    background-color: $nth2BG;
+                                }
+
+                                .boxtitle{
+
+                                    &{
+                                        background-color: $boxtitleBG;
+                                        text-transform: uppercase;
+                                        box-sizing: border-box;
+                                        padding: 0 5px 0 5px;
+                                        text-align: left;
+                                        height: 5rem;
+                                        border-radius: 5px;
+                                        width: 100%;
+                                        display: table-cell;
+                                        vertical-align: middle;
+                                        box-sizing: border-box;
+                                        border-bottom: 5px solid $boxtitleBD;
+                                    }
+
+                                    span{
+                                        font-weight: 700;
+                                        font-size: 0.8rem;
+                                        color: $boxtitleCL;
+                                    }
+
+                                }
+
+                                .boxPrice {
+
+                                    &{
+                                        height: 5.5rem;
+                                    }
+
+                                    span.top{
+                                        width: 100%;
+                                        display: inline-block;
+                                        font-size: 0.8rem;
+                                        text-align: left;
+                                        font-weight: 700;
+                                        color: $boxPriceTopCL;
+                                        font-weight: 800;
+                                    }
+
+                                    .middle {
+
+                                        &{
+                                            height: 3.5rem;
+                                            position: relative;
+                                            color: $boxPriceMiddleCL;
+                                        }
+
+                                        span {
+
+                                            &{
+                                                color: $boxPriceMiddleCL;
+                                                font-weight: 800;
+                                            }
+
+                                            &.coin{
+                                                font-size: 0.8rem;
+                                                text-transform: uppercase;
+
+                                            }
+
+                                            &.price{
+                                                font-size: 3rem;
+                                                word-spacing: -15px;
+                                                line-height: 1;
+                                            }
+
+                                            &.cents{
+                                                font-size: 0.8rem;
+                                            }
+
+                                        }
+
+                                    }
+
+                                    span.down {
+                                        width: 100%;
+                                        display: inline-block;
+                                        font-size: 0.7rem;
+                                        font-weight: 700;
+                                        text-transform: uppercase;
+                                        color: $boxPriceDownCL;
+                                        font-weight: 800;
+                                        line-height: 1;
+                                    }
+
+                                }
+
+                            }
+                        }
+
+                        .img{
+                            & {
+                                width: 100%;
+                                display: inline-block;
+                                overflow: hidden;
+                            }
+
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                display: inline-block;
+                                transform: scale(1);
+                                transition: transform 0.5s ease;
+                            }
+                        }
+
+                    }
+
+                }
+            }
+
+        }
+}
+
+@media screen and (max-width: 900px){
+
+    #offersHome{
+
+        .content{
+
+            ul.list-products{
+
+                &.of6{
+                    li{
+
+                        &{
+                           width: calc((100% - 5rem) /2);
+                        }
+
+                        figure{
+
+                            &{
+                                padding: 0.5rem;
+                            }
+
+                            figcaption{
+
+                                &{
+                                    float: right;
+                                    width: 50%;
+                                }
+
+                                .box02{
+
+                                    &{
+                                        display: inline-block;
+                                        width: 100%;
+                                        vertical-align: top;
+                                        padding: 0;
+                                    }
+
+                                    &:nth-child(1){
+                                        padding: 0.5rem;
+                                    }
+
+                                    .boxtitle{
+
+                                        &{
+                                            width: 100%;
+                                            display: inline-block;
+                                            height: 3.5rem;
+                                            border: none;
+                                            overflow: hidden;
+                                            vertical-align: middle;
+                                            padding: 0.5rem 0.2rem;
+                                        }
+                                        
+                                        span {
+                                            width: 100%;
+                                            display: inline-block;
+                                            font-size: 0.7rem;
+                                            vertical-align: middle;
+                                            text-align: center;
+                                        }
+
+                                    }
+
+                                    .boxPrice{
+
+                                        &{
+                                            height: auto;
+                                        }
+
+                                        span.top{
+                                            text-align: center;
+                                        }
+
+                                        .middle{
+
+                                            &{
+                                                height: auto;
+                                            }
+
+                                            span.price{
+                                                font-size: 2.5rem;
+                                            }
+
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+                            
+                            .img {
+                                width: 50%;
+                                float: left;
+                            }
+
+                        }
+
+                    }
+
+                 }
+
+              }
+
+            }
+
+        }
+
+}
+
+@media screen and (max-width: 699px) {
+
+    #offersHome {
+
+        .content {
+
+            &{
+                width: 95%;
+            }
+
+            ul.list-products {
+
+                &.of6 {
+
+                    li {
+                        width: 100%;
+                        margin: 0.5rem 0;
+                        max-width: 495px;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 340px) {
+
+    #offersHome {
+
+        .content {
+
+            ul.list-products {
+
+                &.of6 {
+
+                    li {
+
+                        figure {
+
+                            figcaption {
+
+                                .box02 {
+
+                                    .boxtitle {
+
+                                        span {
+                                            font-size: 0.65rem;
+                                        }
+
+                                    }
+
+                                    .boxPrice {
+
+                                        .middle {
+
+                                          span.price {
+                                              font-size: 2rem;
+                                          }
+
+                                        }
+
+                                    }
+
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+@media screen and (max-width: 1120px){
+
+    #offersHome{
+
+        .content{
+
+            ul.list-products{
+
+                &.of8{
+                    li{
+
+                        &{
+                            width: calc((100% - 5rem) / 3);
+                        }
+
+                    }
+
+                 }
+
+              }
+
+            }
+
+        }
+
+}
+
+@media screen and (max-width: 900px){
+
+    #offersHome{
+
+        .content{
+
+            ul.list-products{
+
+                &.of8{
+                    li{
+
+                        &{
+                           width: calc((100% - 5rem) /2);
+                        }
+
+                        figure{
+
+                            &{
+                                padding: 0.5rem;
+                            }
+
+                            figcaption{
+
+                                &{
+                                    float: right;
+                                    width: 50%;
+                                }
+
+                                .box02{
+
+                                    &{
+                                        display: inline-block;
+                                        width: 100%;
+                                        vertical-align: top;
+                                        padding: 0;
+                                    }
+
+                                    &:nth-child(1){
+                                        padding: 0.5rem;
+                                    }
+
+                                    .boxtitle{
+
+                                        &{
+                                            width: 100%;
+                                            display: inline-block;
+                                            height: 3.5rem;
+                                            border: none;
+                                            overflow: hidden;
+                                            vertical-align: middle;
+                                            padding: 0.5rem 0.2rem;
+                                        }
+                                        
+                                        span {
+                                            width: 100%;
+                                            display: inline-block;
+                                            font-size: 0.7rem;
+                                            vertical-align: middle;
+                                            text-align: center;
+                                        }
+
+                                    }
+
+                                    .boxPrice{
+
+                                        &{
+                                            height: auto;
+                                        }
+
+                                        span.top{
+                                            text-align: center;
+                                        }
+
+                                        .middle{
+
+                                            &{
+                                                height: auto;
+                                            }
+
+                                            span.price{
+                                                font-size: 2.5rem;
+                                            }
+
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+                            
+                            .img {
+                                width: 50%;
+                                float: left;
+                            }
+
+                        }
+
+                    }
+
+                 }
+
+              }
+
+            }
+
+        }
+
+}
+
+@media screen and (max-width: 699px) {
+
+    #offersHome {
+
+        .content {
+
+            &{
+                width: 95%;
+            }
+
+            ul.list-products {
+
+                &.of8 {
+
+                    li {
+                        width: 100%;
+                        margin: 0.5rem 0;
+                        max-width: 495px;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 340px) {
+
+    #offersHome {
+
+        .content {
+
+            ul.list-products {
+
+                &.of8 {
+
+                    li {
+
+                        figure {
+
+                            figcaption {
+
+                                .box02 {
+
+                                    .boxtitle {
+
+                                        span {
+                                            font-size: 0.65rem;
+                                        }
+
+                                    }
+
+                                    .boxPrice {
+
+                                        .middle {
+
+                                          span.price {
+                                              font-size: 2rem;
+                                          }
+
+                                        }
+
+                                    }
+
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+

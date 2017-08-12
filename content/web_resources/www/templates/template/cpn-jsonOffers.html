@@ -1,0 +1,144 @@
+<section id="offersHome" class="resetCpn">
+    <div class="content">
+        <ul class="list-products">
+            
+        </ul>
+    </div>
+</section>
+
+<script type="text/javascript">
+    var jsonArrayOffers = [
+        // OFERTA 1
+        {
+            link        : "google.com.br",
+            name        : "Colcha Casal + 2 Porta Travesseiros",
+            priceTop    : "A partir de",
+            coin        : "R$",
+            price       : '599',
+            cents       : ',99',
+            priceDown   : 'em 10x sem juros',
+            img         : '/arquivos/td-cb-offer01-jsonOffers.jpg'
+        },
+        // OFERTA 2
+        {
+            link        : "google.com.br",
+            name        : "cobertor flanel",
+            priceTop    : "A partir de",
+            coin        : "R$",
+            price       : '59',
+            cents       : ',99',
+            priceDown   : 'em 10x sem juros',
+            img         : '/arquivos/td-cb-offer02-jsonOffers.jpg'
+        },
+        // OFERTA 3
+        {
+            link        : "google.com.br",
+            name        : "cobertor flanel",
+            priceTop    : "A partir de",
+            coin        : "R$",
+            price       : '59',
+            cents       : ',99',
+            priceDown   : 'em 10x sem juros',
+            img         : '/arquivos/td-cb-offer03-jsonOffers.jpg'
+        },
+        // OFERTA 4
+        {
+            link        : "google.com.br",
+            name        : "cobertor flanel",
+            priceTop    : "A partir de",
+            coin        : "R$",
+            price       : '59',
+            cents       : ',99',
+            priceDown   : 'em 10x sem juros',
+            img         : '/arquivos/td-cb-offer04-jsonOffers.jpg'
+        },
+        // OFERTA 5
+        {
+            link        : "google.com.br",
+            name        : "cobertor flanel",
+            priceTop    : "A partir de",
+            coin        : "R$",
+            price       : '59',
+            cents       : ',99',
+            priceDown   : 'em 10x sem juros',
+            img         : '/arquivos/td-cb-offer05-jsonOffers.jpg'
+        },
+        // OFERTA 6
+        {
+            link        : "google.com.br",
+            name        : "cobertor flanel",
+            priceTop    : "A partir de",
+            coin        : "R$",
+            price       : '59',
+            cents       : ',99',
+            priceDown   : 'em 10x sem juros',
+            img         : '/arquivos/td-cb-offer06-jsonOffers.jpg'
+        },
+        // OFERTA 7
+        {
+            link        : "google.com.br",
+            name        : "cobertor flanel",
+            priceTop    : "A partir de",
+            coin        : "R$",
+            price       : '59',
+            cents       : ',99',
+            priceDown   : 'em 10x sem juros',
+            img         : '/arquivos/td-cb-offer07-jsonOffers.jpg'
+        },
+        // OFERTA 8
+        {
+            link        : "google.com.br",
+            name        : "cobertor flanel",
+            priceTop    : "A partir de",
+            coin        : "R$",
+            price       : '59',
+            cents       : ',99',
+            priceDown   : 'em 10x sem juros',
+            img         : '/arquivos/td-cb-offer08-jsonOffers.jpg'
+        },
+    ]
+</script>
+
+<script id="tplJsonOffers" type="text/template">
+    {{#.}}
+        <li>
+            <a href="{{link}}" title={{name}}>
+                <figure>
+                    <figcaption>
+                        <div class="box02">
+                            <div class="boxtitle">
+                                <span>
+                                    {{name}}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="box02">
+                            <div class="boxPrice">
+                                <span class="top">
+                                    {{priceTop}}
+                                </span>
+                                <div class="middle">
+                                    <span class="coin">
+                                        {{coin}}
+                                    </span>
+                                    <span class="price">
+                                        {{price}}
+                                    </span>
+                                    <span class="cents">
+                                        {{cents}}
+                                    </span>
+                                </div>
+                                <span class="down">
+                                    {{priceDown}}
+                                </span>
+                            </div>
+                        </div>
+                    </figcaption>
+                    <div class="img">
+                        <img src="{{img}}" alt="{{name}}">
+                    </div>
+                </figure>
+            </a>
+        </li>
+    {{/.}}
+</script>
